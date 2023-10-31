@@ -1,16 +1,21 @@
-def test_calculate_bmi(weight=57, height=1.68):
-    print("Height = " + str(height))
-    print("Weight = " + str(weight))
+import Lab3_submodule.Lab2.bmi as bmi
 
-    bmi = weight / (height * height)
-    print("\nBMI = " + str(bmi))
+def test_bmi_normal_weight():
+    weight = 57
+    height = 1.68
+    result = bmi.calculate_bmi(weight, height)
+    assert (result == 0)
 
-    if bmi < 18.5:
-        print("Underweight")
-        return -1
-    elif bmi < 25:
-        print("Normal weight")
-        return 0
-    else:
-        print("Overweight")
-        return 1
+
+def test_bmi_overweight():
+    weight = 80
+    height = 1.68
+    result = bmi.calculate_bmi(weight, height)
+    assert (result == 1)
+
+
+def test_bmi_underweight():
+    weight = 40
+    height = 1.68
+    result = bmi.calculate_bmi(weight, height)
+    assert (result == -1)

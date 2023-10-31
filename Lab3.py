@@ -52,6 +52,11 @@ def main():
     result = bubble_sort(arr, SORT_DESCENDING)
     print(result)
 
+    # Reject invalid]
+    print("Invalid Input!!")
+    result = "not a number"
+
+
 if __name__ == "__main__":
     main()
 
