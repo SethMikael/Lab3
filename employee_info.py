@@ -3,10 +3,11 @@ employee_data = [
     {"name": "John", "age": 30, "department": "Sales", "salary": 50000},
     {"name": "Jane", "age": 25, "department": "Marketing", "salary": 60000},
     {"name": "Mary", "age": 23, "department": "Marketing", "salary": 56000},
-    {"name": "Chloe",  "age": 35, "department": "Engineering", "salary": 70000},
+    {"name": "Chloe", "age": 35, "department": "Engineering", "salary": 70000},
     {"name": "Mike", "age": 32, "department": "Engineering", "salary": 65000},
     {"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}
 ]
+
 
 def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     result = []
@@ -18,33 +19,42 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
 
     return result
 
+
 def calculate_average_salary():
     total = 0
     average = 0
 
-    #add your implementation to calculate here
-
+    # add your implementation to calculate here
+    for item in employee_data:
+        total += item["salary"]
+    average = total / len(employee_data)
 
     return average
+
 
 def get_employees_by_dept(department):
     result = []
 
     # Add your implementation from here
-
+    for item in employee_data:
+        if item["department"] == department:
+            result.append(item)
 
     return result
 
+
 def display_all_records():
-    print(("Name" + "\t" +"Age" +"\t" +"Department" +"\t" +"Salary" ).expandtabs(15))
+    print(("Name" + "\t" + "Age" + "\t" + "Department" + "\t" + "Salary").expandtabs(15))
     for item in employee_data:
-        print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(item["salary"])).expandtabs(15))
+        print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(
+            item["salary"])).expandtabs(15))
 
 
 def display_records(employee_info):
-    print(("Name" + "\t" +"Age" +"\t" +"Department" +"\t" +"Salary" ).expandtabs(15))
+    print(("Name" + "\t" + "Age" + "\t" + "Department" + "\t" + "Salary").expandtabs(15))
     for item in employee_info:
-        print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(item["salary"])).expandtabs(15))
+        print((item["name"] + "\t" + str(item["age"]) + "\t" + item["department"] + "\t" + str(
+            item["salary"])).expandtabs(15))
 
 def display_main_menu():
 
